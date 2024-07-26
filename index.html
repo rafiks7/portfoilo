@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Rafik Shukralla</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <a href="#" class="image avatar"
+          ><img src="images/profilepicture.jpg" alt=""
+        /></a>
+		<h1 id="typewriter">
+			<div class="line">Hello, I am <strong>Rafik</strong></div>
+			<div class="line">aspiring backend developer</div>
+			<div class="line">and a cybersecurity enthusiast.</div>
+		  </h1>
+		  <script>
+			document.addEventListener('DOMContentLoaded', () => {
+			  const lines = document.querySelectorAll('#typewriter .line');
+			  const typingSpeed = 50; // Speed in milliseconds per character
+			  const lineDelay = 100; // Delay before typing the next line
+			
+			  function typeLine(line, callback) {
+				let index = 0;
+				const text = line.innerHTML;
+				line.innerHTML = ''; // Clear text content initially
+			
+				function type() {
+				  if (index < text.length) {
+					let char = text.charAt(index);
+					if (char === '<') {
+					  // Handle HTML tags
+					  const tagEnd = text.indexOf('>', index);
+					  line.innerHTML += text.substring(index, tagEnd + 1);
+					  index = tagEnd + 1;
+					} else {
+					  line.innerHTML += char;
+					  index++;
+					}
+					setTimeout(type, typingSpeed);
+				  } else if (callback) {
+					setTimeout(callback, lineDelay); // Call the callback after typing completes
+				  }
+				}
+			
+				type();
+			  }
+			
+			  function typeLines() {
+				let i = 0;
+				function nextLine() {
+				  if (i < lines.length) {
+					const line = lines[i];
+					// Convert <strong> tags to <span class="bold">
+					line.innerHTML = line.innerHTML.replace(/<strong>/g, '<span class="bold">').replace(/<\/strong>/g, '</span>');
+					typeLine(line, nextLine); // Type the current line
+					i++;
+				  }
+				}
+				nextLine();
+			  }
+			
+			  typeLines();
+			});
+			</script>			
+      </div>
+    </header>
+
+	
+
+    <!-- Main -->
+    <div id="main">
+      <!-- One -->
+      <section id="about me">
+        <header class="major">
+          <h2>About Me</h2>
+        </header>
+        <p>
+          <ul>
+			<li>
+				Currently a CS student at CSULB 🦈.
+			</li>
+			<li>
+				Also a SWE fellow at headstarter AI 🚀 where I will be building some AI projects with a team from across the world.
+			</li>
+			<li>
+				I like algorithms, data, and cybersecurity 👨🏻‍💻.
+			</li>
+		  </ul>		  
+        </p>
+      </section>
+
+      <!-- Two -->
+      <section id="education">
+		<header class="major">
+        	<h2>Education</h2>
+		</header>
+		<h3>California State University, Long Beach</h3>
+		<img src="images/CSULB_pyramid.jpg" class="image pyramid" alt="CSULB Pyramid">
+		<h3>Favorite Courses</h3>
+		<ul>
+			<li>
+				Database Fundamentals
+			</li>
+			<li>
+				Machine Learning
+			</li>
+			<li>
+				Principles of Programming Languages
+			</li>
+		</ul>
+		<h3>Projects</h3>
+		<ul>
+			<li>
+				Predicting Rainfall Across Different Regions in Australia Using Various Machine Learning Models
+			</li>
+			<li>
+				University Facility Database Management
+			</li>
+		</ul>
+      </section>
+
+      <section id="skills-interests">
+        <div class="container">
+            <div class="list-container">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>C++</li>
+                    <!-- Add more skills here -->
+                </ul>
+            </div>
+            <div class="list-container">
+                <h2>Areas of Interest</h2>
+                <ul class="interests-list">
+					<li>Machine Learning</li>
+                    <li>Embedded Systems</li>
+                    <li>Cybersecurity</li>
+                    <!-- Add more interests here -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+	  <!-- Two -->
+      <section id="resume">
+		<div class="resume-container">
+			<header class="major">
+        		<h2>Resume</h2>
+			</header>
+			<iframe src="assets/Rafik Shukralla Resume.pdf" height= 100% allowfullscreen></iframe>
+		</div>
+	</section>
+
+      <!-- Three -->
+      <section id="contact">
+		<header class="major">
+        	<h2>Get In Touch</h2>
+		</header>
+        <div class="row">
+          <div class="col-8 col-12-small">
+            <form method="post" action="#">
+              <div class="row gtr-uniform gtr-50">
+                <div class="col-6 col-12-xsmall">
+                  <input type="text" name="name" id="name" placeholder="Name" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="col-12">
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+            </form>
+            <ul class="actions">
+                <li><a href="mailto:rafikasaad007@gmail.com?subject=Hello%20from%20my%20portfolio&body=Hi%20Rafik,%0A%0A" class="button">Send me an email</a></li>
+            </ul>
+        </div>
+    </div>
+		<script>
+			function sendEmail() {
+				const name = encodeURIComponent(document.getElementById('name').value);
+				const email = encodeURIComponent(document.getElementById('email').value);
+				const message = encodeURIComponent(document.getElementById('message').value);
+				const subject = 'Hello%20from%20my%20portfolio';
+				const body = `Hi%20Rafik,%0A%0AName:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
+				window.location.href = `mailto:rafikasaad007@gmail.com?subject=${subject}&body=${body}`;
+			}
+		</script>
+      </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li>
+            <a href="https://github.com/rafiks7" class="icon brands fa-github" target="_blank"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/rafik-shukralla/" class="icon brands fa-linkedin" target="_blank"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy 2024 Rafik Shukralla</li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </body>
+</html>
